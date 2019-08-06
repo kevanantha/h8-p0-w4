@@ -3,10 +3,10 @@ function changeMe(arr) {
   for (var i = 0; i < arr.length; i++) {
     console.log(`${i + 1}. ${arr[i][0]} ${arr[i][1]}:`)
     var result = {
-      firstName: `${arr[i][0]}`,
-      lastName: `${arr[i][1]}`,
-      gender: `${arr[i][2]}`,
-      age: !arr[i][3] ? 'Invalid Birth Year' : new Date().getFullYear() - `${arr[i][3]}`
+      firstName: arr[i][0],
+      lastName: arr[i][1],
+      gender: arr[i][2],
+      age: !arr[i][3] ? 'Invalid Birth Year' : new Date().getFullYear() - arr[i][3]
     }
     console.log(result)
   }
