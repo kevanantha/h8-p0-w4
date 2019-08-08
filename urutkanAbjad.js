@@ -38,13 +38,13 @@ function urutkanAbjad(str) {
 }
 
 // TEST CASES
-console.log(urutkanAbjad('hacktivate')) // 'ehllo'
-console.log(urutkanAbjad('armedi')) // 'ehllo'
-console.log(urutkanAbjad('isro')) // 'ehllo'
-console.log(urutkanAbjad('yusuf')) // 'ehllo'
-console.log(urutkanAbjad('kevin')) // 'ehllo'
-console.log(urutkanAbjad('dimas')) // 'ehllo'
-console.log(urutkanAbjad('gusti')) // 'ehllo'
+console.log(urutkanAbjad('hacktivate')) // 'aacehikttv'
+console.log(urutkanAbjad('armedi')) // 'adeimr'
+console.log(urutkanAbjad('isro')) // 'iors'
+console.log(urutkanAbjad('yusuf')) // 'fsuuy'
+console.log(urutkanAbjad('kevin')) // 'eiknv'
+console.log(urutkanAbjad('dimas')) // 'adims'
+console.log(urutkanAbjad('gusti')) // 'gistu'
 console.log(urutkanAbjad('hello')) // 'ehllo'
 console.log(urutkanAbjad('truncate')) // 'acenrttu'
 console.log(urutkanAbjad('developer')) // 'deeeloprv'
