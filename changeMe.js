@@ -2,11 +2,12 @@ function changeMe(arr) {
   if (!arr.length) console.log('')
   for (var i = 0; i < arr.length; i++) {
     console.log(`${i + 1}. ${arr[i][0]} ${arr[i][1]}:`)
+    var year = new Date().getFullYear()
     var result = {
       firstName: arr[i][0],
       lastName: arr[i][1],
       gender: arr[i][2],
-      age: !arr[i][3] ? 'Invalid Birth Year' : new Date().getFullYear() - arr[i][3]
+      age: !arr[i][3] || arr[i][3] > year ? 'Invalid Birth Year' : year - arr[i][3]
     }
     console.log(result)
   }
