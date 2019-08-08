@@ -3,6 +3,7 @@ function ubahHuruf(kata) {
   var result = ''
   for (var i = 0; i < kata.length; i++) {
     var indexAlphabet = alphabet.indexOf(kata[i])
+    indexAlphabet
     result += alphabet[indexAlphabet + 1]
   }
   return result
