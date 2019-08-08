@@ -1,19 +1,17 @@
 function deepSum(arr) {
   if (!arr.length) return 'No number'
 
-  const result = []
+  let result = 0
 
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
       for (let k = 0; k < arr[i][j].length; k++) {
-        result.push(arr[i][j][k])
+        result += arr[i][j][k]
       }
     }
   }
 
-  return result.reduce(function(acc, current) {
-    return acc + current
-  })
+  return result
 }
 
 //TEST CASE
