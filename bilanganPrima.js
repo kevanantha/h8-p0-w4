@@ -1,14 +1,13 @@
 function angkaPrima(angka) {
   if (angka === 1) return false
-  for (var i = 2; i <= angka; i++) {
+  for (var i = 2; i < angka; i++) {
+    console.log(angka % i)
+    console.log(angka % i === 0)
     if (angka % i === 0) {
-      if (i < angka) {
-        return false
-      } else {
-        return true
-      }
+      return false
     }
   }
+  return true
 }
 
 // TEST CASES
