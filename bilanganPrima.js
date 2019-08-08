@@ -1,11 +1,7 @@
 function angkaPrima(angka) {
   if (angka === 1) return false
   for (var i = 2; i < angka; i++) {
-    console.log(angka % i)
-    console.log(angka % i === 0)
-    if (angka % i === 0) {
-      return false
-    }
+    if (angka % i === 0) return false
   }
   return true
 }
