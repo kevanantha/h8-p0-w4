@@ -2,32 +2,22 @@ function shoppingTime(memberId, money) {
   if (!memberId) return 'Mohon maaf, toko X hanya berlaku untuk member saja'
   if (money < 50000) return 'Mohon maaf, uang tidak cukup'
 
-  var purchasable = true
+  var toko = [
+    ['Sepatu Stacattu', 1500000],
+    ['Baju Zoro', 500000],
+    ['Baju H&N', 250000],
+    ['Sweater Uniklooh', 175000],
+    ['Casing Handphone', 50000]
+  ]
+
   var changeMoney = money
   var listPurchased = []
 
-  while (changeMoney >= 50000 && purchasable) {
-    if (changeMoney >= 1500000) {
-      listPurchased.push('Sepatu Stacattu')
-      changeMoney -= 1500000
+  for (var i = 0; i < toko.length; i++) {
+    if (changeMoney >= toko[i][1]) {
+      listPurchased.push(toko[i][0])
+      changeMoney -= toko[i][1]
     }
-    if (changeMoney >= 500000) {
-      listPurchased.push('Baju Zoro')
-      changeMoney -= 500000
-    }
-    if (changeMoney >= 250000) {
-      listPurchased.push('Baju H&N')
-      changeMoney -= 250000
-    }
-    if (changeMoney >= 175000) {
-      listPurchased.push('Sweater Uniklooh')
-      changeMoney -= 175000
-    }
-    if (changeMoney >= 50000) {
-      listPurchased.push('Casing Handphone')
-      changeMoney -= 50000
-    }
-    purchasable = false
   }
 
   var result = { memberId, money, listPurchased, changeMoney }
@@ -44,7 +34,7 @@ console.log(shoppingTime('1820RzKrnWn08', 2475000))
 //    'Baju H&N',
 //    'Sweater Uniklooh',
 //    'Casing Handphone' ],
-// changeMoney: 0 }
+// // changeMoney: 0 }
 console.log(shoppingTime('82Ku8Ma742', 170000))
 //{ memberId: '82Ku8Ma742',
 // money: 170000,
