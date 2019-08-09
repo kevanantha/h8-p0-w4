@@ -9,50 +9,22 @@ function countProfit(shoppers) {
 
   const result = []
 
-  const sepatu = {
-    product: listBarang[0][0],
-    shoppers: [],
-    leftOver: listBarang[0][2],
-    totalProfit: 0
-  }
-
-  const baju = {
-    product: listBarang[1][0],
-    shoppers: [],
-    leftOver: listBarang[1][2],
-    totalProfit: 0
-  }
-
-  const sweater = {
-    product: listBarang[2][0],
-    shoppers: [],
-    leftOver: listBarang[2][2],
-    totalProfit: 0
-  }
-
-  for (let i = 0; i < shoppers.length; i++) {
-    const { name, product, amount } = shoppers[i]
-
-    if (listBarang[0][0] === product && amount <= sepatu.leftOver) {
-      amount
-      sepatu.shoppers.push(name)
-      sepatu.leftOver -= amount
-      sepatu.totalProfit += listBarang[0][1] * amount
+  for (let i = 0; i < listBarang.length; i++) {
+    const obj = {
+      product: listBarang[i][0],
+      shoppers: [],
+      leftOver: listBarang[i][2],
+      totalProfit: 0
     }
-
-    if (listBarang[1][0] === product && amount <= baju.leftOver) {
-      baju.shoppers.push(name)
-      baju.leftOver -= amount
-      baju.totalProfit += listBarang[1][1] * amount
+    for (let j = 0; j < shoppers.length; j++) {
+      if (listBarang[i][0] === shoppers[j].product && shoppers[j].amount <= obj.leftOver) {
+        obj.shoppers.push(shoppers[j].name)
+        obj.leftOver -= shoppers[j].amount
+        obj.totalProfit += listBarang[i][1] * shoppers[j].amount
+      }
     }
-
-    if (listBarang[2][0] === product && amount <= sweater.leftOver) {
-      sweater.shoppers.push(name)
-      sweater.leftOver -= amount
-      sweater.totalProfit += listBarang[2][1] * amount
-    }
+    result.push(obj)
   }
-  result.push(sepatu, baju, sweater)
   return result
 }
 
