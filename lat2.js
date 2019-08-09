@@ -30,22 +30,25 @@
     result : [0,  3, 111, 9, -56, -17]
 */
 function twoArrayOperation(arr1, arr2) {
+  // your code here
   const result = []
 
   for (let i = 0; arr1.length >= arr2.length ? i < arr1.length : i < arr2.length; i++) {
     if (i % 2 === 0) {
-      !arr1[i] ? (arr1[i] = 0) : (arr2[i] = 0)
+      if (!arr1[i]) arr1[i] = 0
+      if (!arr2[i]) arr2[i] = 0
       result.push(arr1[i] + arr2[i])
-    } else {
-      !arr1[i] ? (arr1[i] = 0) : (arr2[i] = 0)
+    } else if (i % 2 === 1) {
+      if (!arr1[i]) arr1[i] = 0
+      if (!arr2[i]) arr2[i] = 0
       result.push(arr1[i] - arr2[i])
     }
   }
   return result
 }
-
 console.log(twoArrayOperation([-4, 5, 57, 33, -90], [4, 2, 54, 24, 34])) // [ 0, 3, 111, 9, -56]
 console.log(twoArrayOperation([12, 34, 11, 23, 12], [11, 78, 45, 20, 42])) // [ 23, -44, 56, 3, 54 ]
 console.log(twoArrayOperation([1, 2, 3], [1, 2, 3])) // [ 2, 0, 6 ]
 console.log(twoArrayOperation([-4, 5, 57, 33, -90], [4, 2, 54, 24, 34, 17])) // [0,  3, 111, 9, -56, -17]
-console.log(twoArrayOperation([-4, 5, 57, 33, -90], [4, 2, 54, 24, 34, 17, 21, 21])) // [0,  3, 111, 9, -56, -17, 21, -21]
+console.log(twoArrayOperation([-4, 5, 57, 33, -90], [4, 2, 54, 24, 34, 17, 21, 21])) // [0,  3, 111, 9, -56, -17]
+console.log(twoArrayOperation([-1, 2, -3, 4, -5], [-4, -3, 2, 1])) // [0,  3, 111, 9, -56, -17]
