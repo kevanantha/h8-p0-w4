@@ -30,7 +30,6 @@
     result : [0,  3, 111, 9, -56, -17]
 */
 function twoArrayOperation(arr1, arr2) {
-  // your code here
   const result = []
 
   for (let i = 0; arr1.length >= arr2.length ? i < arr1.length : i < arr2.length; i++) {
