@@ -26,6 +26,7 @@ const lat5 = arr => {
       result.push(`${arr[i]} dan Instruktur`)
     }
   }
+
   return result
 }
 
