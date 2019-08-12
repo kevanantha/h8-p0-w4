@@ -4,35 +4,24 @@ function highestScore(students) {
   const result = {}
 
   for (let i = 0; i < students.length; i++) {
-    console.log(students[i].class)
+    result[students[i].class] = {
+      name: students[i].name,
+      score: students[i].score
+    }
     for (let j = 0; j < students.length; j++) {
-      console.log(students[i].class)
-      if (students[i].class === students[j].class /* && students[i].score > students[j].score */) {
-        // result[students[i].class] = {
-        //   name: students[i].name,
-        //   score: students[i].score
-        // }
-        if (students[i].score > students[j].score) {
-          result[students[i].class] = {
-            name: students[i].name,
-            score: students[i].score
-          }
+      if (students[i].class === students[j].class && students[i].score < students[j].score) {
+        result[students[j].class] = {
+          name: students[j].name,
+          score: students[j].score
         }
       }
     }
-    // if (i === students.length - 1) {
-    //   result[students[i].class] = {
-    //     name: students[i].name,
-    //     score: students[i].score
-    //   }
-    // }
   }
-  console.log(result)
   return result
 }
 
 // TEST CASE
-/* console.log(
+console.log(
   highestScore([
     {
       name: 'Dimitri',
@@ -55,7 +44,7 @@ function highestScore(students) {
       class: 'wolves'
     }
   ])
-) */
+)
 
 // {
 //   foxes: { name: 'Dimitri', score: 90 },
