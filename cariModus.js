@@ -16,7 +16,6 @@ function cariModus(arr) {
     if (i === arr.length - 1) result.push(tempArray)
   }
 
-  result
   result.sort(function(a, b) {
     return b.length > a.length
   })
