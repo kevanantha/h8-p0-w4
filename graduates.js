@@ -6,16 +6,16 @@ function graduates(students) {
   for (let i = 0; i < students.length; i++) {
     const { name, score, class: kelas } = students[i]
 
-    if (score > 75) {
-      if (!result[kelas]) {
-        result[kelas] = []
+    if (!result[kelas]) {
+      result[kelas] = []
+      if (score > 75) {
         result[kelas].push({ name, score })
-      } else {
+      }
+    } else if (result[kelas]) {
+      if (score > 75) {
         result[kelas].push({ name, score })
       }
     }
-
-    if (!Object.keys(result).length) result[kelas] = []
   }
   return result
 }
@@ -64,7 +64,7 @@ console.log(
     },
     {
       name: 'Alisa',
-      score: 76,
+      score: 74,
       class: 'wolves'
     },
     {

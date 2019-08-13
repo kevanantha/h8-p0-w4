@@ -4,16 +4,15 @@ function highestScore(students) {
   const result = {}
 
   for (let i = 0; i < students.length; i++) {
-    result[students[i].class] = {
-      name: students[i].name,
-      score: students[i].score
-    }
-    for (let j = 0; j < students.length; j++) {
-      if (students[i].class === students[j].class && students[i].score < students[j].score) {
-        result[students[j].class] = {
-          name: students[j].name,
-          score: students[j].score
-        }
+    if (!result[students[i].class]) {
+      result[students[i].class] = {
+        name: students[i].name,
+        score: students[i].score
+      }
+    } else if (result[students[i].class].score < students[i].score) {
+      result[students[i].class] = {
+        name: students[i].name,
+        score: students[i].score
       }
     }
   }
