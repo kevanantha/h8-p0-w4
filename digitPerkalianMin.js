@@ -5,11 +5,8 @@ function digitPerkalianMinimum(angka) {
   for (var i = 1; i <= length; i++) {
     if (angka % i === 0) {
       var n1 = i.toString()
-      n1
       var n2 = (angka / i).toString()
-      n2
       var n3 = (n1 + n2).length
-      n3
       if (n3 < min) min = n3
     }
   }
