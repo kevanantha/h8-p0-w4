@@ -11,10 +11,8 @@ function graduates(students) {
       if (score > 75) {
         result[kelas].push({ name, score })
       }
-    } else if (result[kelas]) {
-      if (score > 75) {
-        result[kelas].push({ name, score })
-      }
+    } else if (result[kelas] && score > 75) {
+      result[kelas].push({ name, score })
     }
   }
   return result
@@ -64,7 +62,7 @@ console.log(
     },
     {
       name: 'Alisa',
-      score: 74,
+      score: 76,
       class: 'wolves'
     },
     {

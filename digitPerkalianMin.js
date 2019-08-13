@@ -6,10 +6,14 @@ function digitPerkalianMinimum(angka) {
     if (angka % i === 0) {
       var n1 = i.toString()
       var n2 = (angka / i).toString()
+      n1
+      n2
       var n3 = (n1 + n2).length
+      console.log(n3)
       if (n3 < min) min = n3
     }
   }
+  min
   return min
 }
 
